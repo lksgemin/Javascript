@@ -1,0 +1,17 @@
+{
+  "name": "nodejs",
+  "version": "1.0.0",
+  "description": "curso do codeschool",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "dependencies": {
+    "ejs": "^1.0.0",
+    "express": "^4.10.2",
+    "redis": "^2.6.2",
+    "socket.io": "^1.5.1"
+  },
+  "author": "lucasgemin",
+  "license": "ISC"
+}
