@@ -1,0 +1,15 @@
+build
+*.class
+.DS_Store
+*.prefs
+/bin
+**/classes/
+**/.gitignore
+
+node_modules/
+**/node_modules/
+
+mean/node_modules/
+mean/exemplo-mean/node_modules/
+
+
