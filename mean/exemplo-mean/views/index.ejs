@@ -29,7 +29,8 @@
 	    	<tr ng-repeat='contato in contatos'>
 	    		<td>{{contato.nome}}</td>
 	    		<td>{{contato.telefone}}</td>
-	    	</tr>
+          <td><button ng-click="removeContato(contato)">X</button></td>
+        </tr>
 	    </table>
 
 	</section>

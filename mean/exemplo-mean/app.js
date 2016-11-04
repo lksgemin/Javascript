@@ -24,7 +24,8 @@ app.use(express.static(path.join(__dirname, 'public')));
 
 app.use('/', index);
 app.use('/users', users);
-app.post('/contato', index.adicionaContato);
+app.post('/contato/add', index.adicionaContato);
+app.post('/contato/remove', index.removeContato);
 app.get('/contatos', index.listaContatos);
 
 // catch 404 and forward to error handler

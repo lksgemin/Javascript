@@ -27,6 +27,15 @@ router.adicionaContato = function(req, res) {
 	});
 }
 
+router.removeContato = function(req, res) {
+	var contato = new Contato(req.body);
+	contato.remove(function(error, contato) {
+		if(error) res.send(500);
+
+		res.send(201);
+	});
+}
+
 router.listaContatos = function(req, res) {
 	Contato.find({}, function(error, contatos) {
 		if(error) res.send(500);
