@@ -1,0 +1,87 @@
+<!DOCTYPE html>
+<html ng-app="Mean">
+  <head>
+    <title><%= title %></title>
+    <link rel='stylesheet' href='/stylesheets/style.css' />
+    <link rel="stylesheet" href="angular-material/angular-material.css">
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link href="http://fonts.googleapis.com/css?family=Inconsolata" rel="stylesheet" type="text/css">
+  </head>
+  <body>
+
+  	<section ng-controller="ContatosController">
+
+      <div layout="column" ng-cloak="" class="md-inline-form inputdemoBasicUsage" >
+        <form class="form-inline" ng-submit='adicionaContato()'>
+          <md-content md-theme="docs-dark" layout-gt-sm="row" layout-padding="">
+            <div>
+              <md-input-container>
+                <label>Nome</label>
+                <input ng-model="contato.nome">
+              </md-input-container>
+
+              <md-input-container>
+                <label>Email</label>
+                <input ng-model="contato.telefone" type="email">
+              </md-input-container>
+
+              <md-input-container>
+                <md-button type="submit" class="md-raised">Salvar</md-button>
+              </md-input-container>
+            </div>
+          </md-content>
+
+        </form>
+      </div>
+
+      <div flex-gt-sm="50" flex>
+
+        <md-toolbar layout="row" class="md-hue-3">
+          <div class="md-toolbar-tools">
+            <span>Contatos</span>
+          </div>
+        </md-toolbar>
+        <md-content>
+          <md-list flex>
+            <md-subheader class="md-no-sticky">...</md-subheader>
+            <md-list-item class="md-2-line" ng-repeat="contato in contatos">
+              <md-icon ng-class="material-icons">phone</md-icon>
+              <div class="md-list-item-text" ng-class="{'md-offset': phone.options.offset }">
+                <h3> {{ contato.nome }} </h3>
+                <p> {{ contato.telefone }} </p>
+
+                  <md-button class="md-secondary md-fab md-primary md-mini" aria-label="Editar " ng-click="editaContato(contato)">
+                      <md-icon ng-class="material-icons">mode_edit</md-icon>
+                  </md-button>
+
+                  <md-button class="md-secondary md-fab md-mini" aria-label="Excluir" ng-click="removeContato(contato)">
+                    <md-icon ng-class="material-icons">delete_forever</md-icon>
+                  </md-button>
+
+
+              </div>
+            </md-list-item>
+          </md-list>
+        </md-content>
+      </div>
+
+
+
+	</section>
+
+  <script src="angular/angular.js"></script>
+   <script src="angular-aria/angular-aria.js"></script>
+   <script src="angular-animate/angular-animate.js"></script>
+   <script src="angular-material/angular-material.js"></script>
+   <script src="/javascripts/ContatosController.js"></script>
+   <script>
+
+       // Include app dependency on ngMaterial
+
+       angular.module( 'Mean', [ 'ngMaterial' ] )
+           .controller("ContatosController", ContatosController );
+
+   </script>
+
+  </body>
+</html>
